@@ -1,2 +1,2 @@
 # AntiWorldDownloader
-AntiWorldDownloader is a plugin for prevent stealing of your maps!
+#####AntiWorldDownloader site: https://www.spigotmc.org/resources/antiworlddownloader.23022
