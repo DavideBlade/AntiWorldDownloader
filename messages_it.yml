@@ -1,0 +1,11 @@
+# Usa & per i colori. La lista dei colori può essere trovata qui: http://goo.gl/VCscSk
+# Quando il comando specificato nel config.yml non esiste.
+Unknown command: '&cIl comando nel config.yml non esiste!'
+# Se debug (nel config.yml) è impostato su true, la console riceverà delle informazioni sui giocatori con World Downloader che proveranno a entrare.
+# %player è il nome del giocatore.
+Player joined: '&e%player e'' stato autorizzato ad entrare con World Downloader.'
+Player rejected: '&e%player ha provato ad entrare con World Downloader.'
+# Quando il reload del plugin viene eseguito con successo.
+AWD reload: '&3AWD ricaricato!'
+# Quando un giocatore non ha il permesso.
+No permission: '&cNon hai il permesso!'
