@@ -33,14 +33,13 @@ public final class AWD extends JavaPlugin implements PluginMessageListener {
     public void onEnable() {
         final String pluginVersion = getDescription().getVersion();
 
-        /*TODO: New link not yet known to the resource on Spigot
         new Updater(this).checkForUpdate(newVersion -> {
             final String currentVersion = pluginVersion.contains(" ") ? pluginVersion.split(" ")[0] : pluginVersion;
 
-            ChatUtil.sendMessage("&eFound a new version: " + newVersion + " (Yours: v" + currentVersion + ")");
-            ChatUtil.sendMessage("&eDownload it on spigot:");
-            ChatUtil.sendMessage("&espigotmc.org/resources/23022");
-        });*/
+            MessageUtil.sendMessage("&eFound a new version: " + newVersion + " (Yours: v" + currentVersion + ")");
+            MessageUtil.sendMessage("&eDownload it on spigot:");
+            MessageUtil.sendMessage("&espigotmc.org/resources/99356");
+        });
 
         if (!checkVersion()) {
             MessageUtil.sendMessage("&cThis version only supports the following versions:" + String.join(", ", SUPPORTED_VERSIONS));

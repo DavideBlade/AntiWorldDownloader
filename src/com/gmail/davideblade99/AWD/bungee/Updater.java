@@ -35,8 +35,7 @@ final class Updater {
     void checkForUpdate(final ResponseHandler responseHandler) {
         new Thread(() -> {
             try {
-                //TODO: update resource ID
-                final HttpURLConnection con = (HttpURLConnection) new URL("https://api.spigotmc.org/legacy/update.php?resource=23022").openConnection();
+                final HttpURLConnection con = (HttpURLConnection) new URL("https://api.spigotmc.org/legacy/update.php?resource=99356").openConnection();
                 final String newVersion = new BufferedReader(new InputStreamReader(con.getInputStream())).readLine();
 
                 if (isNewerVersion(newVersion)) {

@@ -1,2 +1,2 @@
 # AntiWorldDownloader
-##### AntiWorldDownloader page: https://www.spigotmc.org/resources/antiworlddownloader.23022
+##### AntiWorldDownloader page: https://www.spigotmc.org/resources/antiworlddownloader.99356/
