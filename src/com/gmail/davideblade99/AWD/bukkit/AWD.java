@@ -31,6 +31,7 @@ public final class AWD extends JavaPlugin implements PluginMessageListener {
 
     @Override
     public void onEnable() {
+        //TODO: convertire a Maven progetto (guardare https://gitlab.com/TauCu/command-blocker o altre risorse Universal per capire come fanno a supportare più piattaforme)
         final String pluginVersion = getDescription().getVersion();
 
         new Updater(this).checkForUpdate(newVersion -> {

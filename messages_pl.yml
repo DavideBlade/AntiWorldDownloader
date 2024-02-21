@@ -1,0 +1,11 @@
+# Użyj & dla kodów kolorów. Listę kolorów można znaleźć tutaj: http://goo.gl/VCscSk
+# Gdy polecenie określone w config.yml nie istnieje.
+Unknown command: '&cKomenda z pliku config.yml nie istnieje!'
+# Jeśli debug (w config.yml) jest ustawiony na true, konsola będzie otrzymywać informacje o graczach, do których próbuje dołączyć World Downalder.
+# %player to nazwa gracza.
+Player joined: '&e%player wszedł z upoważnieniem mając World Downalder.'
+Player rejected: '&e%player próbował wejść z World Downalderem.'
+# Po pomyślnym przeładowaniu wtyczki.
+AWD reload: '&3AWD przeładowany!'
+# Gdy gracz nie ma pozwolenia.
+No permission: '&cNie masz permisji!'
