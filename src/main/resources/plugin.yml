@@ -2,7 +2,7 @@ name: AWD
 version: ${project.version}
 main: com.gmail.davideblade99.AWD.bukkit.AWD
 author: DavideBlade
-description: Prevent stealing of your maps!
+description: ${project.description}
 load: POSTWORLD
 website: https://www.spigotmc.org/resources/antiworlddownloader.99356/
 database: false
