@@ -1,5 +1,5 @@
 name: AWD
-version: 2.6.6
+version: ${project.version}
 main: com.gmail.davideblade99.AWD.bukkit.AWD
 author: DavideBlade
 description: Prevent stealing of your maps!

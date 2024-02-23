@@ -1,5 +1,5 @@
 name: AWD
-version: 2.6.5
+version: ${project.version}
 main: com.gmail.davideblade99.AWD.bungee.AWD
 author: DavideBlade
 description: Prevent stealing of your maps!
