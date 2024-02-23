@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.gmail.davideblade99.AWD</groupId>
+        <artifactId>awd-parent</artifactId>
+        <version>2.6.6</version>
+    </parent>
+
+    <artifactId>awd-dist</artifactId>
+    <name>AWD-Dist</name>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.gmail.davideblade99.AWD</groupId>
+            <artifactId>awd-bukkit</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.gmail.davideblade99.AWD</groupId>
+            <artifactId>awd-bungeecord</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>AWD</finalName>
+
+        <resources>
+            <resource>
+                <directory>..</directory>
+                <includes>
+                    <include>LICENSE.md</include>
+                </includes>
+            </resource>
+        </resources>
+
+        <plugins>
+            <!-- Create a single .jar file containing all the modules -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <!-- Remove META-INF folder and reduced pom(s) from the final .jar file -->
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <shadedArtifactAttached>false</shadedArtifactAttached>
+                            <filters>
+                                <filter>
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/**</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

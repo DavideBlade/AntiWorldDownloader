@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.gmail.davideblade99.AWD</groupId>
-    <artifactId>AWD-plugin</artifactId>
-    <name>AntiWorldDownloader</name>
+    <artifactId>awd-parent</artifactId>
+    <name>AWD Parent</name>
     <version>2.6.6</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <url>https://davideblade.github.io</url>
     <description>Prevent stealing of your maps!</description>
@@ -19,91 +19,39 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <repositories>
-        <!-- BungeeCord -->
-        <repository>
-            <id>bungeecord-repo</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </repository>
+    <modules>
+        <module>BungeeCord</module>
+        <module>Bukkit</module>
+        <module>dist</module>
+    </modules>
 
-        <!-- SpigotMC -->
-        <repository>
-            <id>spigot-repo</id>
-            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
-        </repository>
-    </repositories>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>awd-bukkit</artifactId>
+                <version>${project.version}</version>
+            </dependency>
 
-    <dependencies>
-        <!-- BungeeCord -->
-        <dependency>
-            <groupId>net.md-5</groupId>
-            <artifactId>bungeecord-api</artifactId>
-            <version>1.8-SNAPSHOT</version>
-            <type>jar</type>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>net.md-5</groupId>
-            <artifactId>bungeecord-api</artifactId>
-            <version>1.8-SNAPSHOT</version>
-            <type>javadoc</type>
-            <scope>provided</scope>
-        </dependency>
-
-        <!-- SpigotMC -->
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>1.8-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>awd-bungeecord</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
-        <finalName>AWD</finalName>
+        <defaultGoal>clean package</defaultGoal>
 
-        <resources>
-            <resource>
-                <directory>src/main/resources/</directory>
-                <filtering>true</filtering>
-                <includes>
-                    <include>plugin.yml</include>
-                    <include>bungee.yml</include>
-                </includes>
-            </resource>
-            <resource>
-                <directory>src/main/resources/</directory>
-                <filtering>false</filtering>
-                <excludes>
-                    <exclude>plugin.yml</exclude>
-                    <exclude>bungee.yml</exclude>
-                </excludes>
-            </resource>
-
-            <resource>
-                <directory>..</directory>
-                <includes>
-                    <include>LICENSE.md</include>
-                </includes>
-            </resource>
-        </resources>
-
-        <!-- Plugin to compile .jar file -->
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.3.0</version>
-                <configuration>
-                    <!-- Disable Maven descriptor directory inside META-INF folder (within the .jar) -->
-                    <archive>
-                        <addMavenDescriptor>false</addMavenDescriptor>
-                        <manifest>
-                            <addClasspath>false</addClasspath>
-                        </manifest>
-                    </archive>
-                </configuration>
-            </plugin>
-        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>3.5.2</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 </project>
