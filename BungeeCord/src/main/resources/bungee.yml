@@ -1,10 +1,10 @@
-name: AWD
+name: ${plugin.name}
 version: ${project.version}
 main: com.gmail.davideblade99.AWD.bungee.AWD
-author: DavideBlade
-description: Prevent stealing of your maps!
+author: ${plugin.author}
+description: ${plugin.description}
 load: POSTWORLD
-website: https://www.spigotmc.org/resources/antiworlddownloader.99356/
+website: ${plugin.website}
 database: false
 commands:
   awd:

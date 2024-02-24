@@ -22,16 +22,14 @@ public final class AWD extends JavaPlugin implements PluginMessageListener {
 
     private final static String[] SUPPORTED_VERSIONS = {"1.8", "1.9", "1.10", "1.11", "1.12", "1.13", "1.14", "1.15", "1.16", "1.17", "1.18", "1.19", "1.20"};
 
-    private final static FileConfiguration MESSAGES = new YamlConfiguration();
-
     private final static String CHANNEL_1_13 = "wdl:init"; // From 1.13
     private final static String OLD_CHANNEL = "wdl|init"; // Up to 1.12
 
     private static AWD instance;
+    private final FileConfiguration messages = new YamlConfiguration();
 
     @Override
     public void onEnable() {
-        //TODO: convertire a Maven progetto (guardare https://gitlab.com/TauCu/command-blocker o altre risorse Universal per capire come fanno a supportare più piattaforme)
         final String pluginVersion = getDescription().getVersion();
 
         new Updater(this).checkForUpdate(newVersion -> {
@@ -100,7 +98,7 @@ public final class AWD extends JavaPlugin implements PluginMessageListener {
     }
 
     public String getMessage(final String path) {
-        return MESSAGES.getString(path);
+        return messages.getString(path);
     }
 
     private void registerCommands() {
@@ -138,7 +136,7 @@ public final class AWD extends JavaPlugin implements PluginMessageListener {
             FileUtil.copyFile("messages_" + extension + ".yml", messagesFile);
 
         try {
-            MESSAGES.load(messagesFile);
+            messages.load(messagesFile);
         }
         catch (final Exception ignore) {
             MessageUtil.sendMessage("&cFailed to load messages_" + extension + ".yml.");

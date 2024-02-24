@@ -14,15 +14,20 @@
     <description>Prevent stealing of your maps!</description>
 
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <plugin.id>awd</plugin.id>
+        <plugin.name>AntiWorldDownloader</plugin.name>
+        <plugin.author>DavideBlade</plugin.author>
+        <plugin.website>https://www.spigotmc.org/resources/antiworlddownloader.99356/</plugin.website>
     </properties>
 
+    <!-- The multi-module project was chosen because Velocity requires a different version of Java -->
     <modules>
         <module>BungeeCord</module>
         <module>Bukkit</module>
         <module>dist</module>
+        <module>Velocity</module>
     </modules>
 
     <dependencyManagement>
@@ -38,6 +43,12 @@
                 <artifactId>awd-bungeecord</artifactId>
                 <version>${project.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>awd-velocity</artifactId>
+                <version>${project.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -50,6 +61,12 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-shade-plugin</artifactId>
                     <version>3.5.2</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.12.1</version>
                 </plugin>
             </plugins>
         </pluginManagement>

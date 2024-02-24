@@ -24,12 +24,21 @@
             <groupId>com.gmail.davideblade99.AWD</groupId>
             <artifactId>awd-bungeecord</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.gmail.davideblade99.AWD</groupId>
+            <artifactId>awd-velocity</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
         <finalName>AWD</finalName>
 
         <resources>
+            <resource>
+                <directory>src/main/resources/</directory>
+                <filtering>false</filtering>
+            </resource>
             <resource>
                 <directory>..</directory>
                 <includes>
@@ -45,6 +54,7 @@
                 <artifactId>maven-shade-plugin</artifactId>
                 <executions>
                     <execution>
+                        <id>single-jar</id>
                         <phase>package</phase>
                         <goals>
                             <goal>shade</goal>

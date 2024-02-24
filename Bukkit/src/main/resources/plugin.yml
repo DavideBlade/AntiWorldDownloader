@@ -1,10 +1,10 @@
-name: AWD
+name: ${plugin.name}
 version: ${project.version}
 main: com.gmail.davideblade99.AWD.bukkit.AWD
-author: DavideBlade
+author: ${plugin.author}
 description: ${project.description}
 load: POSTWORLD
-website: https://www.spigotmc.org/resources/antiworlddownloader.99356/
+website: ${plugin.website}
 database: false
 commands:
   awd:
