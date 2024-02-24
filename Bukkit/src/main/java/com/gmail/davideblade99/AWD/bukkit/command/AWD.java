@@ -33,23 +33,10 @@ public final class AWD implements CommandExecutor {
         }
 
 
-        if (args[0].equalsIgnoreCase("reload")) {
-            if (!sender.hasPermission("antiwdl.command.reload"))
-                MessageUtil.sendMessage(sender, plugin.getMessage("No permission"));
-            else {
-                plugin.reload();
-                MessageUtil.sendMessage(sender, plugin.getMessage("AWD reload"));
-            }
-
-            return true;
-        }
-
-
         if (args[0].equalsIgnoreCase("help")) {
             final String[] messages = {
                     "§e§m--------[§c§lAWD commands§e§m]--------",
-                    "§3/AWD - §ePlugin information.",
-                    "§3/AWD reload - §eReload the plugin."
+                    "§3/AWD - §ePlugin information."
             };
             sender.sendMessage(messages);
             return true;

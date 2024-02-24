@@ -5,7 +5,3 @@ Unknown command: '&cKomenda z pliku config.yml nie istnieje!'
 # %player to nazwa gracza.
 Player joined: '&e%player wszedł z upoważnieniem mając World Downalder.'
 Player rejected: '&e%player próbował wejść z World Downalderem.'
-# Po pomyślnym przeładowaniu wtyczki.
-AWD reload: '&3AWD przeładowany!'
-# Gdy gracz nie ma pozwolenia.
-No permission: '&cNie masz permisji!'

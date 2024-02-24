@@ -77,11 +77,6 @@ public final class AWD extends JavaPlugin implements PluginMessageListener {
         MessageUtil.sendMessage("&eAWD has been disabled! (Version: " + getDescription().getVersion() + ")");
     }
 
-    public void reload() {
-        getServer().getPluginManager().disablePlugin(this);
-        getServer().getPluginManager().enablePlugin(this);
-    }
-
     @Override
     public void onPluginMessageReceived(final String channel, final Player player, final byte[] data) {
         if (!channel.equalsIgnoreCase(OLD_CHANNEL) && !channel.equalsIgnoreCase(CHANNEL_1_13))
