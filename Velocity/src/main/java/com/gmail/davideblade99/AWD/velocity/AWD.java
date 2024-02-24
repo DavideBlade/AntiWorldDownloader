@@ -6,7 +6,6 @@
 
 package com.gmail.davideblade99.AWD.velocity;
 
-import com.google.common.collect.ImmutableList;
 import com.google.inject.Inject;
 import com.velocitypowered.api.command.CommandManager;
 import com.velocitypowered.api.command.CommandMeta;
@@ -37,7 +36,6 @@ import java.util.List;
 @Plugin(id = AWDInfo.ID, name = AWDInfo.NAME, version = AWDInfo.VERSION, url = AWDInfo.WEBSITE, description = AWDInfo.DESCRIPTION, authors = {AWDInfo.AUTHOR})
 public final class AWD {
 
-    public final static List<String> SUPPORTED_VERSIONS = ImmutableList.of("1.8", "1.9", "1.10", "1.11", "1.12", "1.13", "1.14", "1.15", "1.16", "1.17", "1.18", "1.19", "1.20");
     public static final LegacyChannelIdentifier OLD_CHANNEL = new LegacyChannelIdentifier("wdl|init"); // Up to 1.12
     public static final MinecraftChannelIdentifier CHANNEL_1_13 = MinecraftChannelIdentifier.from("wdl:init"); // From 1.13
 
@@ -64,8 +62,6 @@ public final class AWD {
             sendMessage(proxy.getConsoleCommandSource(), "&espigotmc.org/resources/99356");
         });
 
-        instance = this;
-
         try {
             loadConfig();
             loadMessages();
@@ -73,6 +69,8 @@ public final class AWD {
             e.printStackTrace();
             return;
         }
+
+        instance = this;
 
         registerCommands();
         registerChannels();
@@ -84,6 +82,8 @@ public final class AWD {
     public void onShutdown(final ProxyShutdownEvent event) {
         proxy.getChannelRegistrar().unregister(CHANNEL_1_13);
         proxy.getChannelRegistrar().unregister(OLD_CHANNEL);
+
+        instance = null;
 
         sendMessage(proxy.getConsoleCommandSource(), "&eAWD has been disabled! (Version: " + AWDInfo.VERSION + ")");
     }
@@ -136,10 +136,6 @@ public final class AWD {
     private void registerChannels() {
         proxy.getChannelRegistrar().register(CHANNEL_1_13);
         proxy.getChannelRegistrar().register(OLD_CHANNEL);
-    }
-
-    private void disablePlugin() {
-        //setEnabled(false); // TODO
     }
 
     /**
