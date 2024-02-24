@@ -58,7 +58,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <executable>C:\Users\loren\.jdks\openjdk-17\bin\java.exe</executable>
+                    <executable>${JAVA_17_HOME}\bin\java.exe</executable> <!-- Property defined in ~/.m2/settings.xml -->
                 </configuration>
             </plugin>
         </plugins>
