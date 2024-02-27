@@ -1,0 +1,7 @@
+# 使用 & 进行颜色编码。颜色列表可在此处找到： http://goo.gl/VCscSk
+# 当 config.yml 中指定的命令不存在时。
+Unknown command: '&c命令不在config.yml中！'
+# 如果将 debug（在 config.yml 中）设为 true，控制台就会收到使用 World Downloader 的玩家试图加入的信息。
+# %player 是球员的名字。
+Player joined: '&e%player已被允许用World Downloader加入。'
+Player rejected: '&e%player尝试使用World Downloader进入。'
