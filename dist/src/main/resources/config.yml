@@ -1,5 +1,5 @@
 # Use & for color codes. List of color can be found here: http://goo.gl/VCscSk
-# Language of messages. At the moment there is only "it", "en", "pl" and "cn".
+# Language of messages. At the moment there is only "it", "en", "pl", "cn" and "bn".
 Locale: en
 # %player is the player name.
 Command: 'kick %player &4&lWorldDownloader is forbidden here!'

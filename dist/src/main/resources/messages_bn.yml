@@ -1,0 +1,7 @@
+# Color codes bebohar korte & bebohar korun. Color codes er talika ekhane paben: http://goo.gl/VCscSk
+# Jokhon config.yml e kono command biddoman thake nah.
+Unknown command: '&cUkto command ti config.yml e biddoman nei!'
+# Jodi debug (config.yml er) ke true te set kora hoi, tahole console ti World Downloader diye dhukte chawa player der somporke tottho pabe.
+# %player holo oi player tir nam.
+Player joined: '&e%player ke World Downloader diye probesh korar onumoti dewa hoyeche.'
+Player rejected: '&e%player World Downloader diye probesh korar chesta koreche.'
