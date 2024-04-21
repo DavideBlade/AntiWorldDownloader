@@ -1,0 +1,7 @@
+# Utilisez & pour les codes couleur. La liste des couleurs peut-être trouvée ici : http://goo.gl/VCscSk
+# Quand la commande spécifiée dans le config.yml n'existe pas.
+Unknown command: '&cLa commande dans config.yml n''hésiste pas !'
+# Si debug (dans config.yml) est défini sur true, la console recevra des informations sur les joueurs avec World Downloader essayant de rejoindre.
+# %player est le nom du joueur.
+Player joined: '&e%player est bien autorisé à rentrer avec World Downloader.'
+Player rejected: '&e%player essaye de rentrer avec World Downloader.'
