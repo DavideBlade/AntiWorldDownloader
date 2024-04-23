@@ -1,0 +1,7 @@
+# Используйте & для цветовых кодов. Список цветов можно найти здесь: http://goo.gl/VCscSk
+# Когда команда, указанная в config.yml, не существует.
+Unknown command: '&cКоманды в config.yml не существует!'
+# Если для параметра debug (в config.yml) установлено значение true, консоль будет получать информацию об игроках, пытающихся присоединиться с помощью World Downloader.
+# %player это имя игрока.
+Player joined: '&e%player было разрешено войти с помощью World Downloader.'
+Player rejected: '&e%player пытался войти через World Downloader.'
