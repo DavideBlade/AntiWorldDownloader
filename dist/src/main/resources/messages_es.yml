@@ -1,0 +1,7 @@
+# Usa & para usar códigos de colores. La lista de códigos de colores está aquí: http://goo.gl/VCscSk
+# Cuando el comando especificado en config.yml no existe.
+Unknown command: '&cEl comando especificado en el archivo config.yml no existe!'
+# Si la depuración (en config.yml) está habilitada, la consola recibirá información sobre los jugadores con World Downloader que intentan unirse.
+# %player es el nombre del jugador.
+Player joined: '&e%player ha sido autorizado para entrar usando World Downloader.'
+Player rejected: '&e%player ha intentado entrar usando World Downloader.'
