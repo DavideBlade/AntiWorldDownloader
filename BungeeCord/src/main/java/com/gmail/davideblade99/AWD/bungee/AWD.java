@@ -23,8 +23,6 @@ import java.io.IOException;
 
 public final class AWD extends Plugin implements Listener {
 
-    private final static String[] SUPPORTED_VERSIONS = {"1.8", "1.9", "1.10", "1.11", "1.12", "1.13", "1.14", "1.15", "1.16", "1.17", "1.18", "1.19", "1.20", "1.21"};
-
     private final static String CHANNEL_1_13 = "wdl:init"; // From 1.13
     private final static String OLD_CHANNEL = "wdl|init"; // Up to 1.12
 
@@ -49,12 +47,6 @@ public final class AWD extends Plugin implements Listener {
             MessageUtil.sendMessage("&eDownload it on spigot:");
             MessageUtil.sendMessage("&espigotmc.org/resources/99356");
         });
-
-        if (!checkVersion()) {
-            MessageUtil.sendMessage("&cThis version only supports the following versions:" + String.join(", ", SUPPORTED_VERSIONS));
-            MessageUtil.sendMessage("&cAWD " + pluginVersion + " was disabled.");
-            return;
-        }
 
         try {
             createConfig();
@@ -142,19 +134,6 @@ public final class AWD extends Plugin implements Listener {
 
     private String getMessage(final String path) {
         return messages.getString(path);
-    }
-
-    /**
-     * @return true if the Minecraft server version is supported, otherwise false
-     */
-    private boolean checkVersion() {
-        final String serverVersion = getProxy().getVersion();
-
-        for (String version : SUPPORTED_VERSIONS)
-            if (serverVersion.contains(version))
-                return true;
-
-        return false;
     }
 
     public static AWD getInstance() {
