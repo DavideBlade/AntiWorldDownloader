@@ -51,9 +51,8 @@ public final class AWD extends Plugin implements Listener {
         });
 
         if (!checkVersion()) {
-            MessageUtil.sendMessage("&cThis version only supports the following versions:" + String.join(", ", SUPPORTED_VERSIONS));
-            MessageUtil.sendMessage("&cAWD " + pluginVersion + " was disabled.");
-            return;
+            MessageUtil.sendMessage("&cThis version has been tested on the following BungeeCord versions:" + String.join(", ", SUPPORTED_VERSIONS));
+            MessageUtil.sendMessage("The server is on a different version and the plugin may not work properly");
         }
 
         try {

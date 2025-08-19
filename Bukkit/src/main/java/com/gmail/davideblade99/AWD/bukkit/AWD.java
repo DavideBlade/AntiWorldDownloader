@@ -41,10 +41,8 @@ public final class AWD extends JavaPlugin implements PluginMessageListener {
         });
 
         if (!checkVersion()) {
-            MessageUtil.sendMessage("&cThis version only supports the following versions:" + String.join(", ", SUPPORTED_VERSIONS));
-            MessageUtil.sendMessage("&cAWD " + getDescription().getVersion() + " was disabled.");
-            disablePlugin();
-            return;
+            MessageUtil.sendMessage("&cThis version has been tested on the following Bukkit versions:" + String.join(", ", SUPPORTED_VERSIONS));
+            MessageUtil.sendMessage("The server is on a different version and the plugin may not work properly");
         }
 
         instance = this;
